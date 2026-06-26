@@ -1,26 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --violet:        #7C3AED;
+  --violet-light:  #A78BFA;
+  --violet-dark:   #5B21B6;
+  --lavender:      #EDE9FE;
+  --white:         #FAFAFA;
+  --gray-50:       #F8F7FF;
+  --gray-600:      #6B6B80;
+  --gray-800:      #2D2D3A;
+  --black:         #0F0F1A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--gray-800);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Typography ── */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--violet), #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  @apply inline-flex items-center justify-center font-semibold rounded-full
+         transition-all duration-200 whitespace-nowrap cursor-pointer border-none;
+  background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.45);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center font-semibold rounded-full
+         transition-all duration-200 whitespace-nowrap;
+  color: var(--violet);
+  border: 2px solid var(--violet-light);
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: var(--lavender);
+}
+
+/* ── Section helpers ── */
+.section-label {
+  @apply text-xs font-bold tracking-widest uppercase mb-3;
+  color: var(--violet);
+}
+.section-label-light {
+  color: var(--violet-light);
+}
+
+/* ── Blobs ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--violet-light);
+  top: -100px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+.blob-2 {
+  width: 350px;
+  height: 350px;
+  background: #C084FC;
+  bottom: 0;
+  left: -100px;
+  animation: float 11s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(30px); }
+}
+
+/* ── Carousel ── */
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+  }
+  .blob-1, .blob-2 {
+    animation: none;
+  }
+}
+
+/* ── Form inputs ── */
+.form-input {
+  @apply w-full rounded-xl px-4 py-3 text-sm outline-none transition-all duration-200;
+  border: 1.5px solid #E5E2F5;
+  background: var(--gray-50);
+  color: var(--gray-800);
+  font-family: 'Inter', sans-serif;
+}
+.form-input:focus {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  background: #fff;
+}
+.form-input::placeholder {
+  color: #B0AABF;
 }
