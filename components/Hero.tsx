@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pb-20 text-center"
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pt-24 pb-20 text-center"
              style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, #EDE9FE 0%, #FAFAFA 70%)" }}>
 
       {/* Decorative blobs */}
