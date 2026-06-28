@@ -19,7 +19,7 @@ export default function Navbar() {
         {/* Brand name */}
         <div className="flex items-center gap-2">
           <span className="font-semibold text-[16px] text-gray-800 tracking-tight">
-            Atomy România
+            Atomy <Andreea></Andreea>
           </span>
           <span className="text-lg">🇷🇴</span>
         </div>
