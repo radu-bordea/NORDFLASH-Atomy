@@ -181,7 +181,7 @@ export default function Hero() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-2 gap-2 mb-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
                     {[
                       { name: "name",    placeholder: "Nume",        icon: <UserIcon /> },
                       { name: "prenume", placeholder: "Prenume",     icon: <UserIcon /> },
