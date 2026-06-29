@@ -30,9 +30,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden pt-20 min-h-[60vh] flex items-start ">
+    <section className="relative w-full overflow-hidden pt-20 min-h-[50vh] flex items-start">
 
-      {/* ── Background image — absolute, covers full section ── */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/assets/images/client.png"
@@ -42,78 +42,52 @@ export default function Hero() {
           priority
         />
         {/* Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(237,233,254,0.97) 0%, rgba(237,233,254,0.85) 40%, rgba(237,233,254,0.6) 65%, rgba(237,233,254,0.2) 100%)",
-          }}
-        />
+        <div className="absolute inset-0 bg-linear-to-r from-purple-100/95 via-purple-100/85 to-transparent" />
         {/* Top fade */}
-        <div
-          className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, #EDE9FE, transparent)" }}
-        />
+        <div className="absolute top-0 left-0 right-0 h-16 bg-linear-to-b from-purple-100 to-transparent pointer-events-none" />
         {/* Bottom fade */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-          style={{ background: "linear-gradient(to top, #EDE9FE, transparent)" }}
-        />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-purple-100 to-transparent pointer-events-none" />
       </div>
 
-      {/* ── Content — drives the section height, scrollable on mobile ── */}
+      {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
-        {/* LEFT: Text */}
+        {/* LEFT */}
         <div>
-          <h1
-            className="font-display font-black leading-[1.05] text-gray-900 mb-3"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
-          >
+          <h1 className="font-display font-black leading-tight text-gray-900 mb-3 text-xl md:text-2xl lg:text-3xl">
             Frumusețe &amp;
             <br />
             Sănătate
             <br />
-            <span
-              className="font-display italic"
-              style={{ color: "#7C3AED", fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}
-            >
+            <span className="font-display italic text-purple-600 text-xl md:text-2xl lg:text-3xl">
               la Nivel Superior!
             </span>
           </h1>
 
           {/* Underline + heart */}
           <div className="flex items-center gap-2 mb-4">
-            <div
-              className="h-[3px] w-20 rounded-full"
-              style={{ background: "linear-gradient(to right, #7C3AED, #C084FC)" }}
-            />
+            <div className="h-0.75 w-20 rounded-full bg-linear-to-r from-purple-600 to-purple-400" />
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#C084FC" stroke="#7C3AED" strokeWidth="1.5">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
           </div>
 
-          <p className="text-gray-700 text-[15px] leading-relaxed mb-5 max-w-sm">
+          <p className="text-gray-700 text-sm leading-relaxed md:mb-5 max-w-sm">
             Produse premium certificate, bazate pe{" "}
-            <strong style={{ color: "#7C3AED" }}>ingrediente naturale</strong>{" "}
-            și <strong style={{ color: "#7C3AED" }}>inovație științifică</strong> de top.
+            <strong className="text-purple-700">ingrediente naturale</strong>{" "}
+            și <strong className="text-purple-700">inovație științifică</strong> de top.
           </p>
 
           {/* Trust badges */}
-          {/* <div className="flex gap-3 flex-wrap">
+          {/* <div className="flex gap-2 flex-wrap">
             {[
               { icon: "🌿", label: "Ingrediente Naturale" },
               { icon: "🛡️", label: "Premium Quality" },
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-semibold"
-                style={{
-                  background: "rgba(255,255,255,0.75)",
-                  border: "1.5px solid #D4AF37",
-                  backdropFilter: "blur(4px)",
-                  color: "#5B21B6",
-                }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
+                           bg-white/75 backdrop-blur-sm border border-yellow-300 text-purple-800"
               >
                 <span>{item.icon}</span>
                 {item.label}
@@ -125,38 +99,23 @@ export default function Hero() {
         {/* RIGHT: Form */}
         <div className="relative">
 
-          {/* Gold Premium medal */}
-          <div
-            className="absolute -top-4 -right-2 w-16 h-16 rounded-full z-20
-                       flex flex-col items-center justify-center text-center shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #F59E0B, #D97706)",
-              border: "3px solid #FCD34D",
-              boxShadow: "0 4px 16px rgba(245,158,11,0.5)",
-            }}
-          >
+          {/* Gold medal */}
+          <div className="absolute -top-4 -right-2 w-16 h-16 rounded-full z-20
+                          flex flex-col items-center justify-center text-center
+                          bg-linear-to-br from-yellow-400 to-yellow-600
+                          border-[3px] border-yellow-300 shadow-lg shadow-yellow-400/50">
             <span className="text-white text-[8px] font-black leading-tight">⭐⭐⭐⭐⭐</span>
             <span className="text-white text-[8px] font-black leading-tight tracking-wide">PREMIUM</span>
             <span className="text-white text-[7px] leading-tight">K-BEAUTY</span>
           </div>
 
           {/* Form card */}
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              background: "linear-gradient(145deg, #fffdf5, #fff9e6)",
-              border: "2px solid #D4AF37",
-              boxShadow: "0 8px 32px rgba(212,175,55,0.2), 0 2px 8px rgba(124,58,237,0.1)",
-            }}
-          >
+          <div className="rounded-2xl overflow-hidden border-2 border-yellow-400
+                          shadow-xl shadow-yellow-200/40 bg-linear-to-br from-yellow-50 to-amber-50">
+
             {/* Header */}
-            <div
-              className="px-5 py-4 flex items-center gap-3"
-              style={{
-                background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
-                borderBottom: "2px solid #D4AF37",
-              }}
-            >
+            <div className="px-5 py-4 flex items-center gap-3
+                            bg-linear-to-r from-purple-600 to-purple-800 border-b-2 border-yellow-400">
               <span className="text-3xl">🎁</span>
               <div>
                 <p className="text-white font-black text-[13px] uppercase tracking-wider">
@@ -175,7 +134,10 @@ export default function Hero() {
                   <span className="text-4xl">🎉</span>
                   <p className="font-black text-gray-900">Mesaj trimis!</p>
                   <p className="text-gray-500 text-sm">Te vom contacta în curând!</p>
-                  <button className="btn-primary px-5 py-2 text-sm mt-1" onClick={() => setStatus("idle")}>
+                  <button
+                    className="btn-primary px-5 py-2 text-sm mt-1"
+                    onClick={() => setStatus("idle")}
+                  >
                     Trimite alt mesaj
                   </button>
                 </div>
@@ -215,20 +177,17 @@ export default function Hero() {
                   </div>
 
                   {status === "error" && (
-                    <p className="text-red-500 text-[12px] mb-2">Ceva n-a mers. Încearcă din nou.</p>
+                    <p className="text-red-500 text-xs mb-2">Ceva n-a mers. Încearcă din nou.</p>
                   )}
 
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full py-3 rounded-xl font-black text-white uppercase tracking-widest
-                               transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-60 text-[13px]"
-                    style={{
-                      background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
-                      boxShadow: "0 4px 16px rgba(124,58,237,0.4), inset 0 1px 0 rgba(212,175,55,0.3)",
-                      border: "1.5px solid #D4AF37",
-                      letterSpacing: "0.1em",
-                    }}
+                    className="w-full py-3 rounded-xl font-black text-white text-[13px]
+                               uppercase tracking-widest transition-all duration-200
+                               hover:-translate-y-0.5 disabled:opacity-60
+                               bg-linear-to-r from-purple-600 to-purple-800
+                               border border-yellow-400 shadow-lg shadow-purple-400/40"
                   >
                     {status === "loading" ? "Se trimite..." : "Trimite Acum →"}
                   </button>
@@ -241,7 +200,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
