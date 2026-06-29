@@ -3,37 +3,48 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    // style={{ background: "#EDE9FE" }}
-    <section className="relative w-full py-18 overflow-hidden" >
+    <section className="relative w-full overflow-hidden pt-2">
 
-      {/* ── Image — full natural width, never cropped ── */}
-      <div className="relative w-full">
+      {/* Image container — capped height */}
+      <div className="relative w-full" style={{ maxHeight: "520px" }}>
         <Image
           src="/assets/images/client.png"
           alt="Atomy România"
           width={1920}
           height={900}
           className="w-full h-auto block"
+          style={{ maxHeight: "520px", objectFit: "cover", objectPosition: "top center" }}
           priority
         />
 
-        {/* Overlay on top of image for text readability */}
+        {/* Overlay */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(237,233,254,0.95) 0%, rgba(237,233,254,0.85) 25%, rgba(237,233,254,0.3) 55%, transparent 80%)",
+              "linear-gradient(to right, rgba(237,233,254,0.96) 0%, rgba(237,233,254,0.85) 25%, rgba(237,233,254,0.25) 55%, transparent 80%)",
           }}
         />
 
-        {/* ── Text sits absolutely over the image ── */}
+        {/* Bottom fade into next section */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #EDE9FE)" }}
+        />
+
+        {/* Top fade from navbar */}
+        <div
+          className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
+          style={{ background: "linear-gradient(to top, transparent, #EDE9FE)" }}
+        />
+
+        {/* Text */}
         <div className="absolute inset-0 flex items-center">
           <div className="px-8 md:px-16 max-w-xl">
 
-            {/* Headline */}
             <h1
               className="font-display font-black leading-[1.05] text-gray-900 mb-3"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.4rem)" }}
             >
               Frumusețe &amp;
               <br />
@@ -41,7 +52,7 @@ export default function Hero() {
               <br />
               <span
                 className="font-display italic"
-                style={{ color: "#7C3AED", fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)" }}
+                style={{ color: "#7C3AED", fontSize: "clamp(1.6rem, 4vw, 3rem)" }}
               >
                 la Nivel Superior!
               </span>
@@ -58,14 +69,14 @@ export default function Hero() {
               </svg>
             </div>
 
-            {/* Sub — hidden on small mobile to save space */}
-            <p className="hidden sm:block text-gray-700 text-[15px] leading-relaxed mb-6">
+            {/* Sub */}
+            <p className="hidden sm:block text-gray-700 text-[15px] leading-relaxed mb-5">
               Produse premium certificate, bazate pe{" "}
               <strong style={{ color: "#7C3AED" }}>ingrediente naturale</strong>{" "}
               și <strong style={{ color: "#7C3AED" }}>inovație științifică</strong> de top.
             </p>
 
-            {/* Trust icons — hidden on small mobile */}
+            {/* Trust icons */}
             <div className="hidden sm:flex gap-3 flex-wrap mb-6">
               {[
                 { icon: "🌿", label: "Ingrediente Naturale" },
@@ -91,6 +102,19 @@ export default function Hero() {
               ))}
             </div>
 
+            {/* CTAs */}
+            <div className="flex gap-3 flex-wrap">
+              <Link href="#contact" className="btn-primary px-6 py-3 text-[14px]">
+                Consultanță Gratuită →
+              </Link>
+              <Link
+                href="#produse"
+                className="btn-ghost px-6 py-3 text-[14px]"
+                style={{ background: "rgba(255,255,255,0.65)", backdropFilter: "blur(4px)" }}
+              >
+                Vezi Produsele
+              </Link>
+            </div>
 
           </div>
         </div>
