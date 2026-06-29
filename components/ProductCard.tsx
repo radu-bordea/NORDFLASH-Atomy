@@ -9,27 +9,35 @@ export interface Product {
   badge: string;
 }
 
-export default function ProductCard({ product }: { product: Product }) {
-  return (
-    <div className="shrink-0 w-36 flex flex-col items-center gap-3 cursor-pointer group">
+interface Props {
+  product: Product;
+  onClick: (product: Product) => void;
+}
 
-      {/* Circular image */}
+export default function ProductCard({ product, onClick }: Props) {
+  return (
+    <div
+      className="shrink-0 w-20 flex flex-col items-center gap-1.5 cursor-pointer group"
+      onClick={() => onClick(product)}
+    >
       <div
-        className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg
-                   transition-all duration-300 group-hover:scale-105 group-hover:shadow-purple-200 group-hover:shadow-xl"
-        style={{ background: "linear-gradient(135deg, #EDE9FE, #DDD6FE)" }}
+        className="relative w-15.5 h-15.5 rounded-full overflow-hidden
+                   border-[3px] border-white shadow-md
+                   transition-all duration-300 group-hover:scale-120 group-hover:shadow-lg"
+        style={{
+          background: "linear-gradient(135deg, #EDE9FE, #DDD6FE)",
+          boxShadow: "0 2px 12px rgba(124,58,237,0.15)",
+        }}
       >
         <Image
           src={product.image}
           alt={product.name}
           fill
           className="object-cover"
-          sizes="112px"
+          sizes="62px"
         />
       </div>
-
-      {/* Label */}
-      <p className="text-[12px] font-bold text-center text-gray-700 leading-tight tracking-wide uppercase">
+      <p className="text-[10px] font-bold text-center text-gray-700 leading-tight tracking-wide uppercase px-1">
         {product.name}
       </p>
     </div>

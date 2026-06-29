@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden min-h-screen flex items-start mt-2">
+    <section className="relative w-full overflow-hidden pt-20 min-h-[60vh] flex items-start ">
 
       {/* ── Background image — absolute, covers full section ── */}
       <div className="absolute inset-0 z-0">
@@ -46,7 +46,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(237,233,254,0.97) 0%, rgba(237,233,254,0.85) 10%, rgba(237,233,254,0.6) 65%, rgba(237,233,254,0.2) 20%)",
+              "linear-gradient(to right, rgba(237,233,254,0.97) 0%, rgba(237,233,254,0.85) 40%, rgba(237,233,254,0.6) 65%, rgba(237,233,254,0.2) 100%)",
           }}
         />
         {/* Top fade */}
@@ -100,7 +100,7 @@ export default function Hero() {
           </p>
 
           {/* Trust badges */}
-          <div className="flex gap-3 flex-wrap">
+          {/* <div className="flex gap-3 flex-wrap">
             {[
               { icon: "🌿", label: "Ingrediente Naturale" },
               { icon: "🛡️", label: "Premium Quality" },
@@ -119,7 +119,7 @@ export default function Hero() {
                 {item.label}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* RIGHT: Form */}
@@ -181,7 +181,7 @@ export default function Hero() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
                     {[
                       { name: "name",    placeholder: "Nume",        icon: <UserIcon /> },
                       { name: "prenume", placeholder: "Prenume",     icon: <UserIcon /> },
