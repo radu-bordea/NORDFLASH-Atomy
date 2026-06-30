@@ -30,19 +30,19 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden pt-20 min-h-[50vh] flex items-start">
+    <section className="relative w-full overflow-hidden pt-20 min-h-[50vh] md:min-h-[80vh] flex items-start">
 
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/images/client.png"
+          src="/assets/images/client8.png"
           alt="Atomy România"
           fill
           className="object-cover object-top"
           priority
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-purple-100/95 via-purple-100/85 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-purple-100/95 via-purple-100/50 to-transparent" />
         {/* Top fade */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-linear-to-b from-purple-100 to-transparent pointer-events-none" />
         {/* Bottom fade */}
@@ -50,29 +50,29 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-2 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
         {/* LEFT */}
         <div>
-          <h1 className="font-display font-black leading-tight text-gray-900 mb-3 text-xl md:text-2xl lg:text-3xl">
+          <h1 className="font-display font-black leading-tight text-gray-900 mb-1 text-lg md:text-xl lg:text-2xl">
             Frumusețe &amp;
             <br />
             Sănătate
-            <br />
-            <span className="font-display italic text-purple-600 text-xl md:text-2xl lg:text-3xl">
+            <span> 🌿  </span>
+            <span className="font-display italic text-purple-600 text-lg md:text-xl lg:text-2xl">
               la Nivel Superior!
             </span>
           </h1>
 
           {/* Underline + heart */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-1">
             <div className="h-0.75 w-20 rounded-full bg-linear-to-r from-purple-600 to-purple-400" />
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#C084FC" stroke="#7C3AED" strokeWidth="1.5">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
           </div>
 
-          <p className="text-gray-700 text-sm leading-relaxed md:mb-5 max-w-sm">
+          <p className="text-gray-700 text-xs leading-relaxed md:mb-5 max-w-sm">
             Produse premium certificate, bazate pe{" "}
             <strong className="text-purple-700">ingrediente naturale</strong>{" "}
             și <strong className="text-purple-700">inovație științifică</strong> de top.
@@ -97,7 +97,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT: Form */}
-        <div className="relative">
+        <div className="relative md:mt-8">
 
           {/* Gold medal */}
           <div className="absolute -top-4 -right-2 w-16 h-16 rounded-full z-20
@@ -114,7 +114,7 @@ export default function Hero() {
                           shadow-xl shadow-yellow-200/40 bg-linear-to-br from-yellow-50 to-amber-50">
 
             {/* Header */}
-            <div className="px-5 py-4 flex items-center gap-3
+            <div className="px-5 py-2 md:py-4 flex items-center gap-3
                             bg-linear-to-r from-purple-600 to-purple-800 border-b-2 border-yellow-400">
               <span className="text-3xl">🎁</span>
               <div>
@@ -128,7 +128,7 @@ export default function Hero() {
             </div>
 
             {/* Body */}
-            <div className="px-5 py-4">
+            <div className="px-5 py-2 md:py-4">
               {status === "success" ? (
                 <div className="text-center py-4 flex flex-col items-center gap-2">
                   <span className="text-4xl">🎉</span>
@@ -143,7 +143,7 @@ export default function Hero() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                  <div className="grid grid-cols-2 gap-2 mb-2">
                     {[
                       { name: "name",    placeholder: "Nume",        icon: <UserIcon /> },
                       { name: "prenume", placeholder: "Prenume",     icon: <UserIcon /> },

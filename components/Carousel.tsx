@@ -52,7 +52,7 @@ export default function Carousel() {
   };
 
   return (
-    <section id="produse" className="relative py-2 bg-white overflow-hidden">
+    <section id="produse" className="relative py-1 bg-white overflow-hidden">
 
       {/* Top fade */}
       <div

@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Carousel from "@/components/Carousel";
-import ContactForm from "@/components/ContactForm";
-// import Benefits from "@/components/Benefits";
+import Benefits from "@/components/Benefits";
 // import ContactForm from "@/components/ContactForm";
+// import Benefits from "@/components/Benefits";
+
 // import Footer from "@/components/Footer";
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Carousel />
+        <Benefits/>
         {/* <ContactForm/> */}
         {/* <Benefits /> */}
         {/* <ContactForm /> */}
