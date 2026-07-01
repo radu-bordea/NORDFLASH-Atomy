@@ -30,184 +30,226 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden pt-20 min-h-[50vh] md:min-h-[80vh] flex items-start">
+    <div className="w-full bg-white">
 
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/images/client8.png"
-          alt="Atomy România"
-          fill
-          className="object-cover object-top"
-          priority
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-purple-100/95 via-purple-100/50 to-transparent" />
-        {/* Top fade */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-linear-to-b from-purple-100 to-transparent pointer-events-none" />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-purple-100 to-transparent pointer-events-none" />
-      </div>
+      {/* ── SECTION 1: Image + headline ── */}
+      <section className="relative w-full overflow-hidden pt-16 bg-white">
+        <div className="relative w-full">
+          <Image
+            src="/assets/images/client11.png"
+            alt="Atomy România"
+            width={1920}
+            height={600}
+            className="w-full h-auto block"
+            priority
+          />
+          {/* Lighter overlay — let image breathe */}
+          <div className="absolute inset-0 bg-linear-to-r from-white/95 via-white/50 to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-10 bg-linear-to-t from-white to-transparent pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-2 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Text — max 40% width so products always visible */}
+          <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-10">
+            <div className="max-w-[56%] md:max-w-[38%]">
 
-        {/* LEFT */}
-        <div>
-          <h1 className="font-display font-black leading-tight text-gray-900 mb-1 text-lg md:text-xl lg:text-2xl">
-            Frumusețe &amp;
-            <br />
-            Sănătate
-            <span> 🌿  </span>
-            <span className="font-display italic text-purple-600 text-lg md:text-xl lg:text-2xl">
-              la Nivel Superior!
-            </span>
-          </h1>
+              {/* Script greeting */}
+              <p className="text-violet-700 mb-1 leading-none"
+                 style={{ fontFamily: "'Dancing Script', cursive", fontSize: "clamp(0.9rem, 2.5vw, 1.4rem)" }}>
+                Bună! Sunt Andreea 💜
+              </p>
+              <div className="h-0.5 w-12 bg-violet-700 rounded-full mb-2" />
 
-          {/* Underline + heart */}
-          <div className="flex items-center gap-2 mb-1">
-            <div className="h-0.75 w-20 rounded-full bg-linear-to-r from-purple-600 to-purple-400" />
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C084FC" stroke="#7C3AED" strokeWidth="1.5">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
+              {/* Headline */}
+              <h1 className="font-display font-black text-gray-900 leading-tight mb-2"
+                  style={{ fontSize: "clamp(1.2rem, 3.5vw, 2.8rem)" }}>
+                Te ajut să alegi
+                <br />
+                produsele{" "}
+                <span className="text-violet-600">Atomy</span>
+              </h1>
 
-          <p className="text-gray-700 text-xs leading-relaxed md:mb-5 max-w-sm">
-            Produse premium certificate, bazate pe{" "}
-            <strong className="text-purple-700">ingrediente naturale</strong>{" "}
-            și <strong className="text-purple-700">inovație științifică</strong> de top.
-          </p>
+              {/* Sub — shorter */}
+              <p className="text-gray-700 leading-snug mb-3"
+                 style={{ fontSize: "clamp(0.8rem, 1.5vw, 0.95rem)" }}>
+                Recomandări personalizate pentru{" "}
+                <strong className="text-violet-700">rutina potrivită ție.</strong>
+              </p>
 
-          {/* Trust badges */}
-          {/* <div className="flex gap-2 flex-wrap">
-            {[
-              { icon: "🌿", label: "Ingrediente Naturale" },
-              { icon: "🛡️", label: "Premium Quality" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
-                           bg-white/75 backdrop-blur-sm border border-yellow-300 text-purple-800"
-              >
-                <span>{item.icon}</span>
-                {item.label}
+              {/* Trust icons — horizontal row like reference */}
+              <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+                {[
+                  { img: "/assets/images/leaf.png", title: "Ingrediente", sub: "atent selecționate" },
+                  { img: "/assets/images/formula.png", title: "Formule", sub: "testate" },
+                  { img: "/assets/images/heart.png", title: "Rezultate", sub: "vizibile" },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-0.5">
+                    <div className="relative w-4 h-4 shrink-0 mt-0.5 px-1">
+                      <Image src={item.img} alt={item.title} fill className="object-contain" />
+                    </div>
+                    <div className="mt-1">
+                      <p className="font-bold text-gray-800 leading-tight"
+                         style={{ fontSize: "clamp(0.6rem, 1vw, 0.75rem)" }}>
+                        {item.title}
+                      </p>
+                      <p className="font-normal text-gray-500 leading-tight"
+                         style={{ fontSize: "clamp(0.55rem, 0.9vw, 0.7rem)" }}>
+                        {item.sub}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div> */}
-        </div>
 
-        {/* RIGHT: Form */}
-        <div className="relative md:mt-8">
-
-          {/* Gold medal */}
-          <div className="absolute -top-4 -right-2 w-16 h-16 rounded-full z-20
-                          flex flex-col items-center justify-center text-center
-                          bg-linear-to-br from-yellow-400 to-yellow-600
-                          border-[3px] border-yellow-300 shadow-lg shadow-yellow-400/50">
-            <span className="text-white text-[8px] font-black leading-tight">⭐⭐⭐⭐⭐</span>
-            <span className="text-white text-[8px] font-black leading-tight tracking-wide">PREMIUM</span>
-            <span className="text-white text-[7px] leading-tight">K-BEAUTY</span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 2: Form ── */}
+      <section className="w-full bg-white px-3 pb-3">
+        <div className="max-w-xl mx-auto">
 
           {/* Form card */}
-          <div className="rounded-2xl overflow-hidden border-2 border-yellow-400
-                          shadow-xl shadow-yellow-200/40 bg-linear-to-br from-yellow-50 to-amber-50">
-
-            {/* Header */}
-            <div className="px-5 py-2 md:py-4 flex items-center gap-3
-                            bg-linear-to-r from-purple-600 to-purple-800 border-b-2 border-yellow-400">
-              <span className="text-3xl">🎁</span>
-              <div>
-                <p className="text-white font-black text-[13px] uppercase tracking-wider">
-                  Solicită o Consultanță Personalizată
-                </p>
-                <p className="text-purple-200 text-[11px] mt-0.5">
-                  Te contactăm în cel mai scurt timp.
-                </p>
+          <div className="rounded-2xl border border-violet-100 shadow-sm bg-violet-50/40 p-3">
+            {status === "success" ? (
+              <div className="text-center py-4 flex flex-col items-center gap-2">
+                <span className="text-4xl">🎉</span>
+                <p className="font-black text-gray-900">Mesaj trimis!</p>
+                <p className="text-gray-500 text-sm">Te vom contacta în curând!</p>
+                <button className="btn-primary px-5 py-2 text-sm mt-1" onClick={() => setStatus("idle")}>
+                  Trimite alt mesaj
+                </button>
               </div>
-            </div>
-
-            {/* Body */}
-            <div className="px-5 py-2 md:py-4">
-              {status === "success" ? (
-                <div className="text-center py-4 flex flex-col items-center gap-2">
-                  <span className="text-4xl">🎉</span>
-                  <p className="font-black text-gray-900">Mesaj trimis!</p>
-                  <p className="text-gray-500 text-sm">Te vom contacta în curând!</p>
-                  <button
-                    className="btn-primary px-5 py-2 text-sm mt-1"
-                    onClick={() => setStatus("idle")}
-                  >
-                    Trimite alt mesaj
-                  </button>
+            ) : (
+              <>
+                {/* Form header — compact */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 relative shrink-0">
+                    <Image src="/assets/images/gift.png" alt="Cadou" fill className="object-contain" />
+                  </div>
+                  <div>
+                    <h2 className="font-display font-black text-gray-900 text-[16px] leading-tight">
+                      Consultanță gratuită
+                    </h2>
+                    <p className="text-violet-600 font-bold text-[13px] leading-tight">
+                      și recomandări personalizate
+                    </p>
+                    <p className="text-gray-500 text-[11px]">
+                      Te contactăm în cel mai scurt timp.
+                    </p>
+                  </div>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-2 gap-2 mb-2">
+
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+                  <div className="grid grid-cols-2 gap-2">
                     {[
-                      { name: "name",    placeholder: "Nume",        icon: <UserIcon /> },
-                      { name: "prenume", placeholder: "Prenume",     icon: <UserIcon /> },
-                      { name: "email",   placeholder: "Email",       icon: <EmailIcon /> },
-                      { name: "phone",   placeholder: "Nr. Telefon", icon: <PhoneIcon /> },
-                    ].map((field) => (
-                      <div key={field.name} className="relative">
-                        <span
-                          className="absolute top-1/2 -translate-y-1/2 text-gray-400"
-                          style={{ left: "10px" }}
-                        >
-                          {field.icon}
+                      { name: "name", placeholder: "Nume", icon: <UserIcon />, required: true },
+                      { name: "prenume", placeholder: "Prenume", icon: <UserIcon />, required: false },
+                      { name: "email", placeholder: "Email", icon: <EmailIcon />, type: "email", required: false },
+                      { name: "phone", placeholder: "Nr. Telefon", icon: <PhoneIcon />, type: "tel", required: true },
+                    ].map((f) => (
+                      <div key={f.name} className="relative">
+                        <span className="absolute top-1/2 -translate-y-1/2 text-violet-400" style={{ left: "10px" }}>
+                          {f.icon}
                         </span>
                         <input
-                          name={field.name}
-                          type="text"
-                          placeholder={field.placeholder}
-                          value={form[field.name as keyof typeof form]}
+                          name={f.name} type={(f as any).type || "text"} required={f.required}
+                          placeholder={f.placeholder}
+                          value={form[f.name as keyof typeof form]}
                           onChange={handleChange}
-                          required={field.name === "name" || field.name === "phone"}
-                          className="form-input text-[13px]"
-                          style={{
-                            borderColor: "#E8D5A3",
-                            paddingLeft: "32px",
-                            paddingTop: "10px",
-                            paddingBottom: "10px",
-                          }}
+                          className="w-full rounded-xl border border-violet-200 bg-white text-gray-800
+                                     text-[13px] outline-none transition-all
+                                     focus:border-violet-500 focus:ring-2 focus:ring-violet-100
+                                     placeholder:text-gray-400"
+                          style={{ paddingLeft: "32px", paddingTop: "10px", paddingBottom: "10px", paddingRight: "10px" }}
                         />
                       </div>
                     ))}
                   </div>
 
                   {status === "error" && (
-                    <p className="text-red-500 text-xs mb-2">Ceva n-a mers. Încearcă din nou.</p>
+                    <p className="text-red-500 text-xs">Ceva n-a mers. Încearcă din nou.</p>
                   )}
 
                   <button
                     type="submit"
                     disabled={status === "loading"}
                     className="w-full py-3 rounded-xl font-black text-white text-[13px]
-                               uppercase tracking-widest transition-all duration-200
-                               hover:-translate-y-0.5 disabled:opacity-60
-                               bg-linear-to-r from-purple-600 to-purple-800
-                               border border-yellow-400 shadow-lg shadow-purple-400/40"
+                               uppercase tracking-widest bg-violet-700 hover:bg-violet-800
+                               transition-all duration-200 disabled:opacity-60 shadow-md shadow-violet-300/40"
                   >
-                    {status === "loading" ? "Se trimite..." : "Trimite Acum →"}
+                    {status === "loading" ? "Se trimite..." : "Vreau Recomandarea Gratuită →"}
                   </button>
 
-                  <p className="text-[10px] text-gray-400 text-center mt-2">
-                    Prin trimiterea formularului ești de acord cu politica de confidențialitate.
+                  <p className="text-[10px] text-gray-400 text-center">
+                    De acord cu{" "}
+                    <span className="text-violet-600 underline cursor-pointer">politica de confidențialitate.</span>
                   </p>
                 </form>
-              )}
-            </div>
+              </>
+            )}
           </div>
+
+          {/* WhatsApp CTA — compact */}
+          <a
+            href="https://wa.me/40720367609"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-green-300
+                       bg-white shadow-sm hover:shadow-md transition-all duration-200 no-underline"
+          >
+            <span className="text-3xl">💬</span>
+            <div className="text--center flex flex-col gap-0.5">
+              <p className="font-black text-green-600 text-[13px] uppercase tracking-wide">
+                Scrie-mi direct pe WhatsApp
+              </p>
+              <div className="flex items-center gap-2">
+                <p className="text-gray-500 text-[11px] pl-10">Răspund rapid!</p>
+                <span className="bg-green-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Online</span>
+              </div>
+            </div>
+          </a>
+
+          {/* 3 perks — compact */}
+          <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+            {[
+              { img: "/assets/images/gift.png", title: "Cadou la prima comandă", desc: "Surpriză specială pentru tine!", descColor: "text-violet-500" },
+              { img: "/assets/images/car.png", title: "Livrare direct acasă", desc: "În România și Europa.", descColor: "text-gray-500" },
+              { img: "/assets/images/test.png", title: "Testare gratuită", desc: "Descoperă ce ți se potrivește.", descColor: "text-gray-500" },
+            ].map((perk) => (
+              <div key={perk.title} className="flex flex-col items-center gap-1">
+                <div className="w-12 h-12 relative">
+                  <Image src={perk.img} alt={perk.title} fill className="object-contain" />
+                </div>
+                <p className="font-black text-gray-900 text-[11px] leading-tight">{perk.title}</p>
+                <p className={`${perk.descColor} text-[10px] leading-snug`}>{perk.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Scroll arrow */}
+          <div className="flex justify-center mt-3 mb-1">
+            <button
+              onClick={() => document.getElementById("produse")?.scrollIntoView({ behavior: "smooth" })}
+              className="w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center
+                         animate-bounce hover:border-violet-400 hover:text-violet-600 transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
 function UserIcon() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
       <circle cx="12" cy="7" r="4" />
@@ -217,7 +259,7 @@ function UserIcon() {
 
 function EmailIcon() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="4" width="20" height="16" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -227,7 +269,7 @@ function EmailIcon() {
 
 function PhoneIcon() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.99-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
