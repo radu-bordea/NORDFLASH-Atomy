@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Carousel from "@/components/Carousel";
 import Benefits from "@/components/Benefits";
+import ModelCarousel from "@/components/ModelCarousel";
 // import ContactForm from "@/components/ContactForm";
 // import Benefits from "@/components/Benefits";
 
