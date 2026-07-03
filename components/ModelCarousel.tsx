@@ -4,7 +4,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import MODELS from "@/data/models";
 
-const CARD_WIDTH = 150;
+const CARD_WIDTH = 130;
 const GAP = 10;
 const STEP = CARD_WIDTH + GAP;
 const SPEED = 0.03;

@@ -40,8 +40,8 @@ export default function Hero() {
   return (
     <div className="w-full bg-white">
       {/* ── SECTION 1: Image + headline ── */}
-      <section className="relative w-full overflow-hidden pt-16 bg-white">
-        <div className="relative w-full">
+      <section className="relative w-full overflow-hidden pt-12 bg-white ">
+        <div className="relative w-full" >
           <Image
             src="/assets/images/client11.png"
             alt="Atomy România"
@@ -63,7 +63,7 @@ export default function Hero() {
                 className="text-violet-700 mb-1 leading-none"
                 style={{
                   fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(0.9rem, 2.5vw, 1.4rem)",
+                  fontSize: "clamp(0.8rem, 2.5vw, 1.4rem)",
                 }}
               >
                 Bună! Sunt Andreea 💜
@@ -73,7 +73,7 @@ export default function Hero() {
               {/* Headline */}
               <h1
                 className="font-display font-black text-gray-900 leading-tight mb-2"
-                style={{ fontSize: "clamp(1.2rem, 3.5vw, 2.8rem)" }}
+                style={{ fontSize: "clamp(0.9rem, 3.5vw, 2.8rem)" }}
               >
                 Te ajut să alegi
                 <br />
@@ -82,15 +82,14 @@ export default function Hero() {
 
               {/* Sub — shorter */}
               <p
-                className="text-gray-700 leading-snug mb-3"
-                style={{ fontSize: "clamp(0.8rem, 1.5vw, 0.95rem)" }}
+                className="text-gray-700 leading-snug mb-2"
+                style={{ fontSize: "clamp(0.7rem, 1.5vw, 0.95rem)" }}
               >
                 Recomandări personalizate pentru{" "}
                 <strong className="text-violet-700">
                   rutina potrivită ție.
                 </strong>
               </p>
-
               {/* Trust icons — horizontal row like reference */}
               <div className="grid grid-cols-3 gap-x-6 gap-y-1">
                 {[
@@ -110,8 +109,8 @@ export default function Hero() {
                     sub: "vizibile",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-0.5">
-                    <div className="relative w-4 h-4 shrink-0 mt-0.5 px-1">
+                  <div key={item.title} className="flex items-start gap-0.6">
+                    <div className="relative w-3.5 h-3.5 shrink-0 mt-0.5 px-1">
                       <Image
                         src={item.img}
                         alt={item.title}
@@ -145,7 +144,7 @@ export default function Hero() {
       <section className="w-full bg-white px-3 pb-3">
         <div className="max-w-xl mx-auto">
           {/* Form card */}
-          <div className="rounded-2xl border border-violet-100 shadow-sm bg-violet-50/40 p-3">
+          <div className="rounded-2xl border border-violet-100 shadow-sm bg-violet-50/40 p-2 md:p-3">
             {status === "success" ? (
               <div className="text-center py-4 flex flex-col items-center gap-2">
                 <span className="text-4xl">🎉</span>
@@ -163,7 +162,7 @@ export default function Hero() {
             ) : (
               <>
                 {/* Form header — compact */}
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="w-12 h-12 relative shrink-0">
                     <Image
                       src="/assets/images/gift.png"
@@ -186,7 +185,7 @@ export default function Hero() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-1.5">
                     {[
                       {
                         name: "name",
@@ -230,13 +229,13 @@ export default function Hero() {
                           value={form[f.name as keyof typeof form]}
                           onChange={handleChange}
                           className="w-full rounded-xl border border-violet-200 bg-white text-gray-800
-                                     text-[13px] outline-none transition-all
+                                     text-[11px] outline-none transition-all
                                      focus:border-violet-500 focus:ring-2 focus:ring-violet-100
                                      placeholder:text-gray-400"
                           style={{
                             paddingLeft: "32px",
-                            paddingTop: "10px",
-                            paddingBottom: "10px",
+                            paddingTop: "6px",
+                            paddingBottom: "6px",
                             paddingRight: "10px",
                           }}
                         />
@@ -253,7 +252,7 @@ export default function Hero() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full py-3 rounded-xl font-black text-white text-[13px]
+                    className="w-full py-2 rounded-xl font-black text-white text-[11px]
                                uppercase tracking-widest bg-violet-700 hover:bg-violet-800
                                transition-all duration-200 disabled:opacity-60 shadow-md shadow-violet-300/40"
                   >
@@ -278,12 +277,12 @@ export default function Hero() {
             href="https://wa.me/40720367609"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-green-300
+            className="mt-2 flex items-center justify-center gap-2 px-4 py-1 rounded-xl border border-green-300
                        bg-white shadow-sm hover:shadow-md transition-all duration-200 no-underline"
           >
-            <span className="text-3xl">💬</span>
+            <span className="text-2xl">💬</span>
             <div className="text--center flex flex-col gap-0.5">
-              <p className="font-black text-green-600 text-[13px] uppercase tracking-wide">
+              <p className="font-black text-green-600 text-[11px] uppercase tracking-wide">
                 Scrie-mi direct pe WhatsApp
               </p>
               <div className="flex items-center gap-2">
