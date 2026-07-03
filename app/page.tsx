@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Carousel from "@/components/Carousel";
 import Benefits from "@/components/Benefits";
 import ModelCarousel from "@/components/ModelCarousel";
 // import ContactForm from "@/components/ContactForm";
@@ -20,7 +19,6 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        {/* <Carousel /> */}
         {/* <Benefits/> */}
         {/* <ContactForm/> */}
         {/* <Benefits /> */}
