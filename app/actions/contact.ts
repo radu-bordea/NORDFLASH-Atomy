@@ -19,7 +19,7 @@ export async function sendContactEmail(data: ContactPayload) {
 
   const { data: emailData, error } = await resend.emails.send({
     from: "Atomy România <contact@atomybyandreea.ro>",
-    to: ["radu.bordea.dev@gmail.com"],
+    to: ["atomybyandreea@gmail.com"],
     replyTo: email || undefined,
     subject: `🔔 Cerere nouă de la ${name}`,
     html: `
