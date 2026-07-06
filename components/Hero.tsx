@@ -234,7 +234,7 @@ export default function Hero() {
           {/* Scroll arrow */}
           <div className="flex justify-center mt-3 mb-1">
             <button
-              onClick={() => document.getElementById("produse")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })}
               className="w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center
                          animate-bounce hover:border-violet-400 hover:text-violet-600 transition-colors"
             >

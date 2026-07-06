@@ -31,7 +31,7 @@ const FEATURES = [
 
 export default function Benefits() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white" id="benefits">
 
       {/* ── Header ── */}
       <div className="text-center pb-6 px-5 bg-white">
@@ -141,7 +141,7 @@ export default function Benefits() {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-10 h-10 rounded-full border-2 border-violet-200 flex items-center justify-center
+            className="w-7 h-7 rounded-full border-2 border-violet-200 flex items-center justify-center
                        text-violet-600 hover:bg-violet-50 hover:border-violet-400
                        transition-all duration-200 shadow-sm"
           >
