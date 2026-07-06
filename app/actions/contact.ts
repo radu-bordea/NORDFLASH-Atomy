@@ -18,7 +18,7 @@ export async function sendContactEmail(data: ContactPayload) {
   console.log("Sending to:", data);
 
   const { data: emailData, error } = await resend.emails.send({
-    from: "Atomy România <onboarding@resend.dev>",
+    from: "Atomy România <contact@atomybyandreea.ro>",
     to: ["radu.bordea.dev@gmail.com"],
     replyTo: email || undefined,
     subject: `🔔 Cerere nouă de la ${name}`,
