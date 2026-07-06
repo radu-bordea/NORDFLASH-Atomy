@@ -19,7 +19,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        {/* <Benefits/> */}
+        <Benefits/>
         {/* <ContactForm/> */}
         {/* <Benefits /> */}
         {/* <ContactForm /> */}
