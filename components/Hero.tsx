@@ -12,7 +12,7 @@ const WHATSAPP_NUMBER = "40720367609";
 export default function Hero() {
   const [form, setForm] = useState({ name: "", prenume: "", email: "", phone: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [agreed, setAgreed] = useState(false);
+  const [agreed, setAgreed] = useState(true);
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -193,7 +193,7 @@ export default function Hero() {
                       className="w-3.5 h-3.5 accent-violet-600 cursor-pointer shrink-0"
                     />
                     <span className="text-[10px] text-gray-400 leading-snug">
-                      Sunt de acord cu{" "}
+                      Trimițând acest formular, îți dai acordul pentru{" "}
                       <button
                         type="button"
                         onClick={() => setPrivacyOpen(true)}

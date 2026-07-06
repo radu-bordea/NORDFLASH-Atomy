@@ -33,13 +33,19 @@ export default function PrivacyModal({ isOpen, onClose }: Props) {
       />
 
       {/* Modal */}
-      <div className="fixed z-50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                      w-[92vw] max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
-           style={{ animation: "slideUp 0.25s ease" }}>
+      <div
+        className="fixed z-50 w-[92vw] max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
+        style={{
+          top: "50%",
+          left: "50%",
+          animation: "slideUp 0.5s ease forwards",
+          willChange: "transform, opacity",
+        }}
+      >
 
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-violet-100
-                        bg-linear-to-r from-violet-600 to-violet-800">
+                        bg-gradient-to-r from-violet-600 to-violet-800">
           <h2 className="font-black text-white text-[15px] uppercase tracking-wide">
             Politica de Confidențialitate
           </h2>
