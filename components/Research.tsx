@@ -71,7 +71,7 @@ export default function Research() {
                 sizes="(max-width: 640px) 50vw, 25vw"
               />
               {/* Fade from left white into image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-r from-white via-white/40 to-transparent" />
             </div>
 
             {/* Content */}
@@ -124,7 +124,7 @@ export default function Research() {
       <div className="flex justify-center mt-10">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="w-10 h-10 rounded-full border-2 border-violet-200 flex items-center justify-center
+          className="w-7 h-7 rounded-full border-2 border-violet-200 flex items-center justify-center
                      text-violet-600 hover:bg-violet-50 hover:border-violet-400
                      transition-all duration-200 shadow-sm"
         >
