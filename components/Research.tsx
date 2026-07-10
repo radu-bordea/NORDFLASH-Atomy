@@ -39,7 +39,7 @@ const CARDS = [
 
 export default function Research() {
   return (
-    <section id="research" className="w-full bg-white py-12 px-4">
+    <section id="research" className="w-full bg-white py-6 px-4">
 
       {/* Header */}
       <div className="text-center mb-10">

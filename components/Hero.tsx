@@ -232,7 +232,7 @@ export default function Hero() {
           <ModelCarousel />
 
           {/* Scroll arrow */}
-          <div className="flex justify-center mt-3 mb-1">
+          {/* <div className="flex justify-center mt-3 mb-1">
             <button
               onClick={() => document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })}
               className="w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center
@@ -243,7 +243,7 @@ export default function Hero() {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </button>
-          </div>
+          </div> */}
 
         </div>
       </section>

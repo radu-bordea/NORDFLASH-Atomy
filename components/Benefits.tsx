@@ -87,8 +87,23 @@ export default function Benefits() {
         </div>
       </div>
 
+              {/* Back to top */}
+        <div className="flex justify-center ">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="w-7 h-7 rounded-full border-2 border-violet-200 flex items-center justify-center
+                       text-violet-600 hover:bg-violet-50 hover:border-violet-400
+                       transition-all duration-200 shadow-sm"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="18 15 12 9 6 15" />
+            </svg>
+          </button>
+        </div>
+
       {/* ── Awards section ── */}
-      <div id="premii" className="w-full bg-white px-4 pb-6">
+      <div id="premii" className="w-full bg-white px-4 mt-6">
 
         {/* Header */}
         <div className="text-center mb-8">
