@@ -34,7 +34,7 @@ export default function Benefits() {
     <section className="w-full bg-white" id="benefits">
 
       {/* ── Header ── */}
-      <div className="text-center pb-6 px-5 bg-white">
+      <div className="text-center py-6 px-5 bg-white">
         <p className="text-violet-600 font-black text-[11px] tracking-widest uppercase mb-2">
           De ce să alegi
         </p>
