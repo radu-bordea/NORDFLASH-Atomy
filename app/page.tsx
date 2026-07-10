@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Benefits from "@/components/Benefits";
 import ModelCarousel from "@/components/ModelCarousel";
 import Research from "@/components/Research";
+import Testimonials from "@/components/Testimonials";
 // import ContactForm from "@/components/ContactForm";
 // import Benefits from "@/components/Benefits";
 
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Hero />
         <Benefits/>
         <Research/>
+        <Testimonials/>
         {/* <ContactForm/> */}
         {/* <Benefits /> */}
         {/* <ContactForm /> */}
