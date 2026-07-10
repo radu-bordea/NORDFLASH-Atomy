@@ -75,6 +75,7 @@ export default function Testimonials() {
         <div className="w-10 h-[2px] bg-violet-600 rounded-full mx-auto mt-4" />
       </div>
 
+
       {/* Arrows + track */}
       <div className="flex items-center w-full">
 
