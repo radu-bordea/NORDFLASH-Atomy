@@ -107,11 +107,17 @@ export default function Hero() {
       </section>
 
       {/* ── SECTION 2: Form ── */}
-      <section className="w-full bg-white px-3 pb-3">
+      <section className="w-full bg-white px-3 pb-3 pt-1 md:pb-6 md:pt-4">
         <div className="max-w-xl mx-auto">
 
           {/* Form card */}
-          <div className="rounded-2xl border border-violet-100 shadow-sm bg-violet-50/40 p-2 md:p-3">
+          <div className="rounded-2xl p-3"
+               style={{
+                 background: "linear-gradient(145deg, #fffdf5, #fff9e6)",
+                 border: "2px solid transparent",
+                 backgroundClip: "padding-box",
+                 boxShadow: "0 0 0 2px #D4AF37, 0 8px 32px rgba(212,175,55,0.25), 0 2px 8px rgba(124,58,237,0.08)",
+               }}>
             {status === "success" ? (
               <div className="text-center py-4 flex flex-col items-center gap-2">
                 <span className="text-4xl">🎉</span>
