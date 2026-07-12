@@ -12,6 +12,8 @@ const SLIDES = [
   { id: 6, img: "/assets/images/s6.jpg" },
   { id: 7, img: "/assets/images/s7.jpg" },
   { id: 8, img: "/assets/images/s8.jpg" },
+  { id: 9, img: "/assets/images/s9.jpg" },
+  { id: 10, img: "/assets/images/s10.jpg" },
 ];
 
 const CARD_WIDTH = 180;
@@ -35,12 +37,13 @@ export default function Testimonials() {
       lastTimeRef.current = time;
       if (!isPaused) {
         offsetRef.current -= SPEED * delta;
-        if (Math.abs(offsetRef.current) >= setWidth) offsetRef.current += setWidth;
+        if (Math.abs(offsetRef.current) >= setWidth)
+          offsetRef.current += setWidth;
         trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
       }
       rafRef.current = requestAnimationFrame(animate);
     },
-    [isPaused, setWidth]
+    [isPaused, setWidth],
   );
 
   useEffect(() => {
@@ -57,28 +60,30 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimoniale" className="w-full bg-white py-12 overflow-hidden">
-
+    <section
+      id="testimoniale"
+      className="w-full bg-white py-12 overflow-hidden"
+    >
       {/* Header */}
       <div className="text-center px-5 mb-8">
         <p className="text-violet-600 font-black text-[11px] tracking-widest uppercase mb-2">
           Ce spun clienții
         </p>
-        <h2 className="font-display font-black text-gray-900 leading-tight mb-3"
-            style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)" }}>
+        <h2
+          className="font-display font-black text-gray-900 leading-tight mb-3"
+          style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)" }}
+        >
           Rezultate <span className="text-violet-600">reale</span>
         </h2>
         <p className="text-gray-500 text-[14px] max-w-md mx-auto leading-relaxed">
-          Descoperă experiențele clienților care au ales produsele Atomy
-          pentru rutina lor zilnică.
+          Descoperă experiențele clienților care au ales produsele Atomy pentru
+          rutina lor zilnică.
         </p>
         <div className="w-10 h-[2px] bg-violet-600 rounded-full mx-auto mt-4" />
       </div>
 
-
       {/* Arrows + track */}
       <div className="flex items-center w-full">
-
         {/* Left arrow */}
         <button
           onClick={() => slide("left")}
@@ -87,8 +92,16 @@ export default function Testimonials() {
                      bg-white border border-violet-200 text-violet-700 shadow-sm
                      hover:bg-violet-50 transition-all duration-200 active:scale-95 z-20"
         >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
@@ -102,11 +115,15 @@ export default function Testimonials() {
           onTouchEnd={() => setIsPaused(false)}
         >
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-10 z-10 pointer-events-none
-                          bg-gradient-to-r from-white to-transparent" />
+          <div
+            className="absolute left-0 top-0 bottom-0 w-10 z-10 pointer-events-none
+                          bg-gradient-to-r from-white to-transparent"
+          />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-10 z-10 pointer-events-none
-                          bg-gradient-to-l from-white to-transparent" />
+          <div
+            className="absolute right-0 top-0 bottom-0 w-10 z-10 pointer-events-none
+                          bg-gradient-to-l from-white to-transparent"
+          />
 
           <div
             ref={trackRef}
@@ -144,12 +161,62 @@ export default function Testimonials() {
                      bg-white border border-violet-200 text-violet-700 shadow-sm
                      hover:bg-violet-50 transition-all duration-200 active:scale-95 z-20"
         >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </button>
       </div>
+
+{/* ── CTA Banner ── */}
+<div className="mx-4 mt-10 rounded-2xl overflow-hidden border border-violet-100 shadow-md">
+  <div className="flex items-center gap-4 p-4">
+
+    {/* Gift image */}
+    <div className="relative shrink-0" style={{ width: "90px", height: "90px" }}>
+      <Image
+        src="/assets/images/gift.png"
+        alt="Cadou"
+        fill
+        className="object-contain"
+        sizes="90px"
+      />
+    </div>
+
+    {/* Text */}
+    <div className="flex flex-col gap-2 flex-1">
+      <p className="font-display font-black text-gray-900 leading-tight"
+         style={{ fontSize: "clamp(0.95rem, 3vw, 1.2rem)" }}>
+        Ești la un pas de{" "}
+        <span className="text-violet-600">rutina potrivită!</span>
+      </p>
+      <p className="text-gray-500 text-[12px] leading-snug">
+        Completează formularul și primești recomandarea personalizată pentru tine.
+      </p>
+    </div>
+  </div>
+
+  {/* Button — outside flex so full width */}
+  <div className="px-4 pb-4">
+    <button
+      onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })
+        ?? window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="w-full py-2.5 rounded-xl font-black text-white text-[12px]
+                 uppercase tracking-widest bg-violet-700 hover:bg-violet-800
+                 transition-all duration-200 shadow-md shadow-violet-300/40"
+    >
+      Vreau Recomandarea Mea →
+    </button>
+  </div>
+</div>
 
       {/* Back to top */}
       <div className="flex justify-center mt-10">
@@ -159,13 +226,20 @@ export default function Testimonials() {
                      text-violet-600 hover:bg-violet-50 hover:border-violet-400
                      transition-all duration-200 shadow-sm"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="18 15 12 9 6 15" />
           </svg>
         </button>
       </div>
-
     </section>
   );
 }

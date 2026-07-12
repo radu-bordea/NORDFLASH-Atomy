@@ -7,7 +7,7 @@ import ModelCarousel from "./ModelCarousel";
 import PrivacyModal from "./Privacymodal";
 
 // ← schimbă cu numărul real
-const WHATSAPP_NUMBER = "40720367609";
+const WHATSAPP_NUMBER = "40728444438";
 
 export default function Hero() {
   const [form, setForm] = useState({ name: "", prenume: "", email: "", phone: "" });
